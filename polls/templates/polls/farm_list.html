@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> 농가 선택 </h1>
+<form action="" method="post">
+{% csrf_token %}
+{% if farm_list %}
+    <ul>
+    {% for farm in farm_list %}
+        <button type="button" onclick="location.href='{% url 'polls:detail' farm.id %}'" value="farm.id" >{{ farm.farm_name }}</button>
+    </ul>
+    {% endfor %}
+    
+{% else %}
+<p>No farms are available.</p>
+{% endif %}
+</form>
+</body>
+</HTML>

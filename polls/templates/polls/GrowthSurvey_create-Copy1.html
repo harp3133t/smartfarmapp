@@ -1,0 +1,120 @@
+<h1>{{ farm.farm_name }} </h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="" method="POST">
+    {% csrf_token %}
+<table border="1">
+    <p></p>
+    입력 날짜 : <input type="date" name="dat">
+	<th>생장</th>
+	<th>-2</th>
+	<th>-1</th>
+	<th>0</th>
+	<th>+1</th>
+	<th>+2</th>
+	<tr>
+	    <td align = "center">개화부 경경</td>
+	    <td align = "center"><input type="radio" name="flower_part" id="flower_part-2"></td>
+	    <td align = "center"><input type="radio" name="flower_part" id="flower_part-1"></td>
+	    <td align = "center"><input type="radio" name="flower_part" id="flower_part0"></td>
+	    <td align = "center"><input type="radio" name="flower_part" id="flower_part1"></td>
+	    <td align = "center"><input type="radio" name="flower_part" id="flower_part2"></td>
+	</tr>
+	<tr>
+	    <td align = "center">생장점 엽형태</td>
+	    <td align = "center"><input type="radio" name="growpoint_shape"></td>
+	    <td align = "center"><input type="radio" name="growpoint_shape"></td>
+	    <td align = "center"><input type="radio" name="growpoint_shape"></td>
+	    <td align = "center"><input type="radio" name="growpoint_shape"></td>
+	    <td align = "center"><input type="radio" name="growpoint_shape"></td>
+	</tr>
+	<tr>
+	    <td align = "center">잎 크기</td>
+	    <td align = "center"><input type="radio" name="leaf_size"></td>
+	    <td align = "center"><input type="radio" name="leaf_size"></td>
+	    <td align = "center"><input type="radio" name="leaf_size"></td>
+	    <td align = "center"><input type="radio" name="leaf_size"></td>
+	    <td align = "center"><input type="radio" name="leaf_size"></td>
+	</tr>
+	<tr>
+	    <td align = "center">측지 형태</td>
+	    <td align = "center"><input type="radio" name="geodetic_form"></td>
+	    <td align = "center"><input type="radio" name="geodetic_form"></td>
+	    <td align = "center"><input type="radio" name="geodetic_form"></td>
+	    <td align = "center"><input type="radio" name="geodetic_form"></td>
+	    <td align = "center"><input type="radio" name="geodetic_form"></td>
+	</tr>
+	<tr>
+	    <td align = "center">줄기 색</td>
+	    <td align = "center"><input type="radio" name="stem_color"></td>
+	    <td align = "center"><input type="radio" name="stem_color"></td>
+	    <td align = "center"><input type="radio" name="stem_color"></td>
+	    <td align = "center"><input type="radio" name="stem_color"></td>
+	    <td align = "center"><input type="radio" name="stem_color"></td>
+	</tr>
+	<tr>
+	    <td align = "center">꽃 크기</td>
+	    <td align = "center"><input type="radio" name="flower_size"></td>
+	    <td align = "center"><input type="radio" name="flower_size"></td>
+	    <td align = "center"><input type="radio" name="flower_size"></td>
+	    <td align = "center"><input type="radio" name="flower_size"></td>
+	    <td align = "center"><input type="radio" name="flower_size"></td>
+	</tr>
+	<tr>
+	    <td align = "center">뿌리형태/냄새</td>
+	    <td align = "center"><input type="radio" name="root_form"></td>
+	    <td align = "center"><input type="radio" name="root_form"></td>
+	    <td align = "center"><input type="radio" name="root_form"></td>
+	    <td align = "center"><input type="radio" name="root_form"></td>
+	    <td align = "center"><input type="radio" name="root_form"></td>
+	</tr>
+	<tr>
+	    <td align = "center">주간절간생장</td>
+	    <td align = "center"><input type="radio" name="weekly_growth"></td>
+	    <td align = "center"><input type="radio" name="weekly_growth"></td>
+	    <td align = "center"><input type="radio" name="weekly_growth"></td>
+	    <td align = "center"><input type="radio" name="weekly_growth"></td>
+	    <td align = "center"><input type="radio" name="weekly_growth"></td>
+	</tr>
+	<tr>
+	    <td align = "center">착과부하수/m2</td>
+	    <td align = "center"><input type="radio" name="fruit_load"></td>
+	    <td align = "center"><input type="radio" name="fruit_load"></td>
+	    <td align = "center"><input type="radio" name="fruit_load"></td>
+	    <td align = "center"><input type="radio" name="fruit_load"></td>
+	    <td align = "center"><input type="radio" name="fruit_load"></td>
+	</tr>
+	<tr>
+	    <td align = "center">개화꽃잎수</td>
+	    <td align = "center"><input type="radio" name="number_bloom"></td>
+	    <td align = "center"><input type="radio" name="number_bloom"></td>
+	    <td align = "center"><input type="radio" name="number_bloom"></td>
+	    <td align = "center"><input type="radio" name="number_bloom"></td>
+	    <td align = "center"><input type="radio" name="number_bloom"></td>
+	</tr>
+	<tr>
+	    <td align = "center">생장점 엽색</td>
+	    <td align = "center"><input type="radio" name="growpoint_leafcolor"></td>
+	    <td align = "center"><input type="radio" name="growpoint_leafcolor"></td>
+	    <td align = "center"><input type="radio" name="growpoint_leafcolor"></td>
+	    <td align = "center"><input type="radio" name="growpoint_leafcolor"></td>
+	    <td align = "center"><input type="radio" name="growpoint_leafcolor"></td>
+	</tr>
+	<tr>
+	    <td align = "center">꽃자루 형태</td>
+	    <td align = "center"><input type="radio" name="flower_shape"></td>
+	    <td align = "center"><input type="radio" name="flower_shape"></td>
+	    <td align = "center"><input type="radio" name="flower_shape"></td>
+	    <td align = "center"><input type="radio" name="flower_shape"></td>
+	    <td align = "center"><input type="radio" name="flower_shape"></td>
+	</tr>
+	<tr>
+	    <td align = "center">개화부위 거리</td>
+	    <td align = "center"><input type="radio" name="flower_distance"></td>
+	    <td align = "center"><input type="radio" name="flower_distance"></td>
+	    <td align = "center"><input type="radio" name="flower_distance"></td>
+	    <td align = "center"><input type="radio" name="flower_distance"></td>
+	    <td align = "center"><input type="radio" name="flower_distance"></td>
+	</tr>
+    </table>
+    <input type="submit" value="Survey">
+</form>
