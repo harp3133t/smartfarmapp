@@ -49,13 +49,13 @@ class Manage(models.Model): # 환경관리 클래스
     WEC=models.FloatField(default=0) # 급액EC
     WRatio=models.IntegerField(default=0) # 배액율
     wtype_choice=[('ds','다량소회'),('sd','소량다회')] #급액방식
-    WType=models.CharField(max_length=2, choices=wtype_choice)
-    RHead=models.BooleanField() # 적심
-    RLeaf=models.BooleanField() # 적엽
-    RFruit=models.BooleanField() #적과
+    WType=models.CharField(max_length=30, choices=wtype_choice)
+    RHead=models.CharField(max_length=10, choices=[('False','무'),('True','유')]) # 적심
+    RLeaf=models.CharField(max_length=10, choices=[('False','무'),('True','유')]) # 적엽
+    RFruit=models.CharField(max_length=10, choices=[('False','무'),('True','유')]) #적과
     Overload=models.FloatField(default=0) # 착과부하
     geo_choice=[('fs','2~3매'),('sc','1~2매'),('no','무')] # 측지확보
-    Geodetic=models.CharField(max_length=2, choices=geo_choice)
+    Geodetic=models.CharField(max_length=40, choices=geo_choice)
     LAI=models.FloatField(default=0) # LAI
     acc_light=models.IntegerField(default=0) # 누적광량
     def __str__(self):
@@ -63,14 +63,3 @@ class Manage(models.Model): # 환경관리 클래스
     def was_published_recently(self):
         return self.pub_date>=timezone.now()-datetime.timedelta(days=1)
 
-class Environment(models.Model): #온실 내부환경 클래스
-    farm_name=models.ForeignKey(Farm,on_delete=models.SET_NULL,null=True)
-    pub_date=models.DateTimeField('date published') # 날짜
-    temp=models.FloatField(default=0) #온도
-    CO=models.IntegerField(default=0) #CO2
-    humidity=models.FloatField(default=0) #습도
-    acc_light=models.IntegerField(default=0) #누적광량
-    def __str__(self):
-        return str(self.pub_date)+"["+str(self.farm_name)+"]"+"[Environment]"
-    def was_published_recently(self):
-        return self.pub_date>=timezone.now()-datetime.timedelta(days=1)

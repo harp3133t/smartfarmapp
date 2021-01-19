@@ -1,0 +1,104 @@
+<h1>{{ farm.farm_name }} </h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+<table border="1">
+    <p></p>
+    입력 날짜 : <input type="date" name="pub_date">
+    
+	<th>환경관리</th>
+	<th>데이터 입력</th>
+	<tr>
+	    <td align = "center">24시간평균온도</td>
+	    <td align = "center"><input type="number" name="temp" value="20.0"></td>
+	</tr>
+	<tr>
+	    <td align = "center">DIF 오전</td>
+	    <td align = "center"><input type="number" name="DIF_AM" value="1.8"></td>
+	</tr>
+    <tr>
+	    <td align = "center">DIF 오후</td>
+	    <td align = "center"><input type="number" name="DIF_PM" value="1.4"></td>
+	</tr>
+    <tr>
+	    <td align = "center">주간시작</td>
+	    <td align = "center"><input type="time" name="D"></td>
+	</tr>
+    <tr>
+	    <td align = "center">야간시작</td>
+	    <td align = "center"><input type="time" name="N" ></td>
+	</tr>
+    <tr>
+	    <td align = "center">HD</td>
+	    <td align = "center"><input type="number" name="HD" value="2.5"></td>
+	</tr>
+    <tr>
+	    <td align = "center">P-band</td>
+	    <td align = "center"><input type="number" name="Pband" value="1.5"></td>
+	</tr>
+    <tr>
+	    <td align = "center">CO2(주간최저)</td>
+	    <td align = "center"><input type="number" name="CO" value="250"></td>
+	</tr>
+    <tr>
+	    <td align = "center">차광</td>
+	    <td align = "center"><input type="number" name="Light" value="0"></td>
+	</tr>
+    <tr>
+	    <td align = "center">△WC(%)</td>
+	    <td align = "center"><input type="number" name="WC" value="4"></td>
+	</tr>
+    <tr>
+	    <td align = "center">급액시작</td>
+	    <td align = "center"><input type="text" name="StartW" value="2:00"></td>
+	</tr>
+    <tr>
+	    <td align = "center">급액종료</td>
+	    <td align = "center"><input type="text" name="EndW" value="3:30"></td>
+	</tr>
+    <tr>
+	    <td align = "center">급액EC/배지 EC</td>
+	    <td align = "center"><input type="number" name="WEC" value="0.5"></td>
+	</tr>
+    <tr>
+	    <td align = "center">배액율</td>
+	    <td align = "center"><input type="number" name="WRatio" value="10"></td>
+	</tr>
+    <tr>
+	    <td align = "center">급액방식</td>
+        <td align = "center"> {{ form.WType }} </td>
+	</tr>
+    <tr>
+	    <td align = "center">적심</td>
+	    <td align = "center">{{ form.RHead }}</td>
+	</tr>
+    <tr>
+	    <td align = "center">적엽</td>
+	    <td align = "center">{{ form.RLeaf }}</td>
+	</tr>
+    <tr>
+	    <td align = "center">적과</td>
+	    <td align = "center">{{ form.RFruit }}</td>
+	</tr>
+    <tr>
+	    <td align = "center">착과부하</td>
+	    <td align = "center"><input type="number" name="Overload" value="1.5"></td>
+	</tr>
+    
+    <tr>
+	    <td align = "center">측지확보</td>
+	    <td align = "center">{{ form.Geodetic }}
+		</td>
+	</tr>
+    <tr>
+	    <td align = "center">LAI</td>
+	    <td align = "center"><input type="number" name="LAI" value="1.2"></td>
+	</tr>
+    <tr>
+	    <td align = "center">누적광량</td>
+	    <td align = "center"><input type="number" name="acc_light" value="800"></td>
+	</tr>
+    </table>
+    <input type="submit" value="Survey">
+</form>
